@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(99, 102, 241, 0.6),
+            0 0 60px rgba(139, 92, 246, 0.4);
+        }
+      }
+
+      .skill-card {
+        animation: float 6s ease-in-out infinite;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1) 0%,
+          rgba(139, 92, 246, 0.1) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .skill-card:hover {
+        animation: glow 2s ease-in-out infinite;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2) 0%,
+          rgba(139, 92, 246, 0.2) 100%
+        );
+        border: 1px solid rgba(139, 92, 246, 0.5);
+      }
+
+      .skill-card:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .skill-card:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .skill-card:nth-child(3) {
+        animation-delay: 2s;
+      }
+      .skill-card:nth-child(4) {
+        animation-delay: 3s;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-bg {
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(99, 102, 241, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 50%,
+            rgba(139, 92, 246, 0.15) 0%,
+            transparent 50%
+          );
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.4),
+            0 0 40px rgba(139, 92, 246, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(99, 102, 241, 0.6),
+            0 0 60px rgba(139, 92, 246, 0.4);
+        }
+      }
+
+      @keyframes slide-in {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .timeline-card {
+        animation: slide-in 0.6s ease-out forwards;
+        opacity: 0;
+      }
+
+      .timeline-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .timeline-card:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+      .timeline-card:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .card-content {
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          135deg,
+          rgba(17, 24, 39, 0.8) 0%,
+          rgba(31, 41, 55, 0.6) 100%
+        );
+        border: 1px solid rgba(139, 92, 246, 0.2);
+      }
+
+      .card-content:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(17, 24, 39, 0.9) 0%,
+          rgba(31, 41, 55, 0.8) 100%
+        );
+        border: 1px solid rgba(139, 92, 246, 0.4);
+      }
+
+      .logo-circle {
+        animation: pulse-glow 3s ease-in-out infinite;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2) 0%,
+          rgba(139, 92, 246, 0.2) 100%
+        );
+        border: 2px solid rgba(139, 92, 246, 0.3);
+      }
+
+      .timeline-line {
+        background: linear-gradient(
+          180deg,
+          rgba(99, 102, 241, 0.8) 0%,
+          rgba(139, 92, 246, 0.8) 50%,
+          rgba(168, 85, 247, 0.8) 100%
+        );
+      }
+
+      .timeline-dot {
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 1) 0%,
+          rgba(99, 102, 241, 0.8) 100%
+        );
+        box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+      }
+
+      .image-overlay {
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(17, 24, 39, 0.4) 100%
+        );
+      }
+
+      .section-bg {
+        background: radial-gradient(
+            circle at 10% 20%,
+            rgba(99, 102, 241, 0.1) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(139, 92, 246, 0.1) 0%,
+            transparent 40%
+          );
+      }
+
+      @keyframes glow {
+        0%,
+        100% {
+          text-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+            0 0 30px rgba(99, 102, 241, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
+            0 0 50px rgba(99, 102, 241, 0.5);
+        }
+      }
+
+      .glow-text {
+        animation: glow 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      .gradient-border {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.3),
+          rgba(99, 102, 241, 0.3)
+        );
+        padding: 2px;
+        border-radius: 1rem;
+      }
+
+      .input-glow:focus {
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+      }
+
+      @keyframes glow-pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(139, 92, 246, 0.8),
+            0 0 50px rgba(99, 102, 241, 0.4);
+        }
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .logo-glow {
+        text-shadow: 0 0 20px rgba(139, 92, 246, 0.6),
+          0 0 40px rgba(99, 102, 241, 0.3);
+      }
+
+      .nav-link {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #8b5cf6, #6366f1);
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link:hover {
+        color: #a78bfa;
+        transform: translateY(-2px);
+      }
+
+      .contact-btn {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1, #ec4899);
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      .contact-btn:hover {
+        animation: gradient-shift 1.5s ease infinite,
+          glow-pulse 2s ease infinite;
+        transform: translateY(-2px) scale(1.05);
+      }
+
+      .header-blur {
+        backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+      }
+
+      /* 🌌 Background */
+      .section-bg {
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(99, 102, 241, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(139, 92, 246, 0.15) 0%,
+            transparent 50%
+          ),
+          #000000;
+      }
+
+      /* ✨ Floating Animation (for subtle motion) */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* 🌟 Glowing Hover Animation */
+      @keyframes glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(139, 92, 246, 0.3),
+            0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(139, 92, 246, 0.6),
+            0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+      }
+
+      /* 🧊 Project Card */
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(
+          135deg,
+          rgba(17, 24, 39, 0.7) 0%,
+          rgba(31, 41, 55, 0.5) 100%
+        );
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        transition: all 0.4s ease;
+        transform: translateY(0);
+      }
+
+      /* Hover Glow + Lift */
+      .project-card:hover {
+        animation: glow 2s ease-in-out infinite;
+        border-color: rgba(139, 92, 246, 0.5);
+        transform: translateY(-8px);
+      }
+
+      /* 📸 Image Overlay Effect */
+      .image-container {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-container::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(139, 92, 246, 0.15);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .project-card:hover .image-container::after {
+        opacity: 1;
+      }
+
+      /* 🌫️ Overlay Gradient */
+      .project-overlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40%;
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(0, 0, 0, 0.7) 100%
+        );
+      }
+
+      /* 🌈 Gradient Text */
+      .gradient-text {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* 🏷️ Tag */
+      .tag {
+        backdrop-filter: blur(8px);
+        background: rgba(139, 92, 246, 0.2);
+        border: 1px solid rgba(139, 92, 246, 0.4);
+        color: #e5e7eb;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        transition: background 0.3s ease;
+      }
+
+      .tag:hover {
+        background: rgba(139, 92, 246, 0.35);
+      }
+
+      /* 🪶 Optional floating effect for models or images */
+      .floating {
+        animation: float 4s ease-in-out infinite;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: 'vtQqCgOKL-l80ejBC',
+        });
+      })();
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+  <body class="bg-black text-white">
+    <!-- MODERN HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 header-blur">
+      <div class="max-w-7xl mx-auto px-6 py-5">
+        <div class="flex items-center justify-between">
+          <!-- Left: Logo with Glow Effect -->
+          <a href="#" class="group flex items-center gap-3">
+            <div
+              class="w-10 h-10 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/30 group-hover:shadow-purple-500/60 transition-all duration-300 group-hover:rotate-6"
+            >
+              <span class="text-white font-bold text-xl">R</span>
+            </div>
+            <span
+              class="text-2xl font-bold text-white logo-glow group-hover:text-purple-300 transition-colors duration-300"
+            >
+              Rehan
+            </span>
+          </a>
+
+          <!-- Center: Navigation -->
+          <nav class="absolute left-1/2 transform -translate-x-1/2">
+            <ul class="flex items-center gap-10">
+              <li>
+                <a
+                  href="#work"
+                  class="nav-link text-gray-300 font-medium text-base cursor-pointer"
+                >
+                  Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#skills"
+                  class="nav-link text-gray-300 font-medium text-base cursor-pointer"
+                >
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  class="nav-link text-gray-300 font-medium text-base cursor-pointer"
+                >
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="nav-link text-gray-300 font-medium text-base cursor-pointer"
+                >
+                  Testimonials
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Right: Contact Button -->
+          <a href="#contact">
+            <button
+              class="contact-btn cursor-pointer px-6 py-2.5 rounded-full font-semibold text-white shadow-lg transition-all duration-300"
+            >
+              Contact Me
+            </button>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section
+      class="relative flex flex-col md:flex-row items-center justify-between min-h-screen max-w-7xl mx-auto px-6 py-12"
+    >
+      <!-- Decorative Background Accents -->
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl"
+      ></div>
+
+      <!-- Left: Hero Text -->
+      <div
+        class="relative z-10 hero-header md:w-1/2 text-center md:text-left space-y-6"
+      >
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          Shaping
+          <span
+            class="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent"
+            >Ideas</span
+          >
+        </h1>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          into Impactful Projects
+        </h1>
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+          that Display
+          <span
+            class="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent"
+            >REAL Results</span
+          >
+        </h1>
+
+        <div class="hero-text max-w-lg mx-auto md:mx-0">
+          <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
+            Hi, I’m <span class="font-semibold text-white">Rehan</span>, a
+            frontend developer based in India with a passion for creating
+            modern, responsive and user-friendly web experiences.
+          </p>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <a href="#work">
+          <button
+            class="work mt-6 px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-lg font-semibold shadow-lg hover:shadow-blue-500/40 transition transform hover:-translate-y-1 hover:scale-105 cursor-pointer"
+          >
+            Check out my Work!
+          </button>
+        </a>
+      </div>
+
+      <!-- Right: Hero Image -->
+      <div
+        class="relative z-10 main-image md:w-1/2 flex justify-center mt-10 md:mt-0"
+      >
+        <img
+          src="./Images/hero-image.png"
+          alt="hero-image"
+          class="w-3/4 md:w-full max-w-md md:max-w-lg rounded-2xl shadow-2xl transition transform hover:scale-105 hover:-translate-y-2 hover:shadow-blue-600/30"
+        />
+      </div>
+    </section>
+
+    <!-- WORK SECTION -->
+    <section
+      id="work"
+      class="section-bg py-24 px-6 min-h-screen flex flex-col justify-center bg-[#0f0f1a]"
+    >
+      <div class="max-w-7xl mx-auto w-full">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <p
+            class="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-4"
+          >
+            Portfolio
+          </p>
+          <h2 class="text-5xl md:text-7xl font-bold mb-6">
+            My Featured <span class="gradient-text">Work</span>
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"
+          ></div>
+          <p class="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+            Explore my latest projects showcasing modern web development and
+            creative design solutions
+          </p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- PROJECT CARD TEMPLATE -->
+          <!-- Each card: relative + transform-gpu for smooth scaling -->
+          <!-- Reused consistent hover and tag styles -->
+
+          <!-- Project 1 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-1.png"
+                  alt="E-Commerce Platform"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-purple-500/80 rounded-full text-sm font-semibold"
+                    >Web Design</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Social Media App
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  A feature-rich social platform with real-time messaging, media
+                  sharing, and community engagement tools.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >React</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Tailwind</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Appwrite</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-2.png"
+                  alt="Creative Portfolio"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-indigo-500/80 rounded-full text-sm font-semibold"
+                    >UI/UX Design</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Disney Plus Clone
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  An immersive Disny Plus Clone website that offers seamless
+                  streaming of movies and shows with user-friendly navigation.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >React</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Tailwind</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Figma</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-3.png"
+                  alt="Social Media App"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-pink-500/80 rounded-full text-sm font-semibold"
+                    >Full Stack</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  AI Personal Assistant
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  An intelligent conversational AI platform with natural
+                  language processing and contextual understanding.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >MERN</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Gemini API</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Node.js</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-4.png"
+                  alt="AI Chatbot Platform"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-cyan-500/80 rounded-full text-sm font-semibold"
+                    >AI Integration</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  AI Resume Checker
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  An intelligent AI-powered resume checker that analyzes and
+                  gives real-time feedback to improve resume quality.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >React</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >OpenAI</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Figma</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-5.png"
+                  alt="Fitness Tracker"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-emerald-500/80 rounded-full text-sm font-semibold"
+                    >Mobile App</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Full-Stack Notes App
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  A comprehensive notes taking app with offline support,
+                  categorization, and cloud synchronization features.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Next.js</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Neon</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Zustand</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="project-card group relative rounded-3xl overflow-hidden transform-gpu transition-transform duration-500 hover:scale-[1.03] cursor-pointer bg-gray-900/40 backdrop-blur-sm"
+          >
+            <a href="#" class="block">
+              <div class="relative overflow-hidden">
+                <img
+                  src="Images/image-6.png"
+                  alt="Analytics Dashboard"
+                  class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110"
+                />
+                <div
+                  class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                ></div>
+              </div>
+              <div class="p-6 relative z-10">
+                <div class="mb-3">
+                  <span
+                    class="inline-block px-4 py-1 bg-amber-500/80 rounded-full text-sm font-semibold"
+                    >Dashboard</span
+                  >
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Apple Clone Website
+                </h3>
+                <p class="text-gray-400 leading-relaxed mb-4">
+                  A powerful apple clone website with real-time data
+                  visualization and comprehensive reporting features.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >React.js</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Three.js</span
+                  >
+                  <span
+                    class="tag px-3 py-1 rounded-full text-xs font-medium text-purple-300"
+                    >Figma</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section id="skills" class="py-24 px-6 section-bg">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <p
+            class="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-4"
+          >
+            What I Master
+          </p>
+          <h2 class="text-5xl md:text-7xl font-bold text-white mb-6">
+            My <span class="gradient-text">Skills</span>
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"
+          ></div>
+          <p class="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+            Crafting digital experiences with cutting-edge technologies
+          </p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <!-- React -->
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/react.png"
+                  alt="React"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">React</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-blue-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/python.png"
+                  alt="Python"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">Next.js</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-yellow-400 to-blue-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <!-- JavaScript -->
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/javascript.png"
+                  alt="JavaScript"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">JavaScript</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Tailwind CSS -->
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/tailwind.png"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">Tailwind</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-teal-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/blender.png"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">Blender</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-teal-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/nodejs.png"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">Node.js</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-teal-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/gsap.png"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">GSAP</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-teal-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-card group relative p-8 rounded-3xl transition-all duration-500 hover:scale-110 cursor-pointer"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="relative z-10 flex flex-col items-center">
+              <div
+                class="w-32 h-32 mb-6 transform group-hover:rotate-12 transition-transform duration-500"
+              >
+                <img
+                  src="./Images/figma.png"
+                  alt="Tailwind CSS"
+                  class="w-full h-full object-contain drop-shadow-2xl"
+                />
+              </div>
+              <h3 class="text-white font-bold text-xl">Figma</h3>
+              <div
+                class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-teal-500 mt-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="py-24 px-6 section-bg">
+      <div class="max-w-6xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-20">
+          <p
+            class="text-indigo-400 text-sm font-semibold tracking-widest uppercase mb-4"
+          >
+            My Journey
+          </p>
+          <h2 class="text-5xl md:text-7xl font-bold mb-6">
+            Professional <span class="gradient-text">Experience</span>
+          </h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto rounded-full"
+          ></div>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative">
+          <!-- Vertical Timeline Line (Desktop) -->
+          <div
+            class="hidden md:block absolute left-16 top-0 bottom-0 w-1 timeline-line rounded-full"
+          ></div>
+
+          <!-- Timeline Card 1 -->
+          <div
+            class="timeline-card flex flex-col md:flex-row items-start gap-8 mb-20 relative"
+          >
+            <!-- Timeline Dot -->
+            <div
+              class="hidden md:block absolute left-[60px] top-12 w-4 h-4 timeline-dot rounded-full z-10"
+            ></div>
+
+            <!-- Logo -->
+            <div class="flex-shrink-0 md:ml-0">
+              <div
+                class="logo-circle w-32 h-32 rounded-2xl flex items-center justify-center p-6 hover:scale-110 transition-all duration-500 cursor-pointer"
+              >
+                <img
+                  src="./Images/react.png"
+                  alt="React Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="flex-1">
+              <div
+                class="card-content rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02]"
+              >
+                <!-- Image with Overlay -->
+                <div class="relative rounded-2xl overflow-hidden mb-6 group">
+                  <img
+                    src="./Images/react-exp.png"
+                    alt="React Experience"
+                    class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div class="image-overlay absolute inset-0"></div>
+                </div>
+
+                <!-- Title and Date -->
+                <div class="mb-6">
+                  <h3
+                    class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+                  >
+                    React Frontend Developer
+                  </h3>
+                  <div class="flex items-center gap-2 text-indigo-300 text-lg">
+                    <span class="text-2xl">🗓️</span>
+                    <span>January 2022 - May 2023</span>
+                  </div>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="space-y-4">
+                  <p
+                    class="text-indigo-400 font-semibold text-lg uppercase tracking-wide"
+                  >
+                    Key Achievements
+                  </p>
+                  <ul class="space-y-3 text-gray-300 text-lg">
+                    <li class="flex items-start gap-3">
+                      <span class="text-indigo-400 text-xl mt-1">▹</span>
+                      <span
+                        >Built a complete social media application using the
+                        MERN stack with Appwrite for authentication and cloud
+                        storage.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-indigo-400 text-xl mt-1">▹</span>
+                      <span
+                        >Implemented real-time user interactions and scalable
+                        backend workflows.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-indigo-400 text-xl mt-1">▹</span>
+                      <span
+                        >Focused on delivering a responsive and secure user
+                        experience with modern UI principles.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Card 2 -->
+          <div
+            class="timeline-card flex flex-col md:flex-row items-start gap-8 mb-20 relative"
+          >
+            <!-- Timeline Dot -->
+            <div
+              class="hidden md:block absolute left-[60px] top-12 w-4 h-4 timeline-dot rounded-full z-10"
+            ></div>
+
+            <!-- Logo -->
+            <div class="flex-shrink-0 md:ml-0">
+              <div
+                class="logo-circle w-32 h-32 rounded-2xl flex items-center justify-center p-6 hover:scale-110 transition-all duration-500 cursor-pointer"
+              >
+                <img
+                  src="./Images/python.png"
+                  alt="Python Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="flex-1">
+              <div
+                class="card-content rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02]"
+              >
+                <!-- Image with Overlay -->
+                <div class="relative rounded-2xl overflow-hidden mb-6 group">
+                  <img
+                    src="./Images/next.png"
+                    alt="Next.js Experience"
+                    class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div class="image-overlay absolute inset-0"></div>
+                </div>
+
+                <!-- Title and Date -->
+                <div class="mb-6">
+                  <h3
+                    class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+                  >
+                    Next.js Developer
+                  </h3>
+                  <div class="flex items-center gap-2 text-indigo-300 text-lg">
+                    <span class="text-2xl">🗓️</span>
+                    <span>December 2023 - January 2025</span>
+                  </div>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="space-y-4">
+                  <p
+                    class="text-indigo-400 font-semibold text-lg uppercase tracking-wide"
+                  >
+                    Key Achievements
+                  </p>
+                  <ul class="space-y-3 text-gray-300 text-lg">
+                    <li class="flex items-start gap-3">
+                      <span class="text-purple-400 text-xl mt-1">▹</span>
+                      <span
+                        >Recreated an award-winning website using React and
+                        Next.js, focusing on precise animations and
+                        micro-interactions.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-purple-400 text-xl mt-1">▹</span>
+                      <span
+                        >Employed GSAP and Framer Motion to replicate smooth
+                        transitions and engaging user experiences.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-purple-400 text-xl mt-1">▹</span>
+                      <span
+                        >Adapted responsive layouts and ensured cross-browser
+                        compatibility across all major devices.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Card 3 -->
+          <div
+            class="timeline-card flex flex-col md:flex-row items-start gap-8 relative"
+          >
+            <!-- Timeline Dot -->
+            <div
+              class="hidden md:block absolute left-[60px] top-12 w-4 h-4 timeline-dot rounded-full z-10"
+            ></div>
+
+            <!-- Logo -->
+            <div class="flex-shrink-0 md:ml-0">
+              <div
+                class="logo-circle w-32 h-32 rounded-2xl flex items-center justify-center p-6 hover:scale-110 transition-all duration-500 cursor-pointer"
+              >
+                <img
+                  src="./Images/fullstack.png"
+                  alt="Full Stack Logo"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="flex-1">
+              <div
+                class="card-content rounded-3xl p-8 transition-all duration-500 hover:scale-[1.02]"
+              >
+                <!-- Image with Overlay -->
+                <div class="relative rounded-2xl overflow-hidden mb-6 group">
+                  <img
+                    src="./Images/image-3.png"
+                    alt="Full Stack Experience"
+                    class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div class="image-overlay absolute inset-0"></div>
+                </div>
+
+                <!-- Title and Date -->
+                <div class="mb-6">
+                  <h3
+                    class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent"
+                  >
+                    Full Stack Web Developer
+                  </h3>
+                  <div class="flex items-center gap-2 text-indigo-300 text-lg">
+                    <span class="text-2xl">🗓️</span>
+                    <span>January 2025 - Present</span>
+                  </div>
+                </div>
+
+                <!-- Responsibilities -->
+                <div class="space-y-4">
+                  <p
+                    class="text-indigo-400 font-semibold text-lg uppercase tracking-wide"
+                  >
+                    Key Achievements
+                  </p>
+                  <ul class="space-y-3 text-gray-300 text-lg">
+                    <li class="flex items-start gap-3">
+                      <span class="text-emerald-400 text-xl mt-1">▹</span>
+                      <span
+                        >Developed a full-stack AI chatbot platform using the
+                        MERN stack with MongoDB as the primary database.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-emerald-400 text-xl mt-1">▹</span>
+                      <span
+                        >Engineered efficient data models and API endpoints to
+                        support real-time AI interactions.</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-emerald-400 text-xl mt-1">▹</span>
+                      <span
+                        >Integrated conversational AI features and focused on
+                        performance, security, and user experience.</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Title -->
+        <h2
+          class="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center mb-16"
+        >
+          What People Say About Me?
+        </h2>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial Card 1 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              I can't say enough good things about Rehan. He was able to take
+              our complex project requirements and turn them into a seamless,
+              functional website. His problem-solving abilities are outstanding.
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Esther Howard"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Esther Howard</p>
+                <p class="text-gray-400 text-xs">@estherhoward</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              Collaborating with Rehan was an absolute pleasure. His
+              professionalism, promptness, and dedication to delivering
+              exceptional results were evident throughout our project. Rehan's
+              enthusiasm for every facet of development truly stands out. If
+              you're seeking to elevate your website and elevate your brand,
+              Rehan is the ideal partner.
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=12"
+                alt="Guy Hawkins"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Guy Hawkins</p>
+                <p class="text-gray-400 text-xs">@guyhawkins</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              Rehan's expertise in web development is truly impressive. He
+              delivered a robust and scalable solution for our e-commerce site,
+              and our online sales have significantly increased since the
+              launch. He's a true professional!
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=33"
+                alt="Floyd Miles"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Floyd Miles</p>
+                <p class="text-gray-400 text-xs">@floydmiles</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              Working with Rehan was a fantastic experience. He transformed our
+              outdated website into a modern, user-friendly platform. His
+              attention to detail and commitment to quality are unmatched.
+              Highly recommend him for any web dev projects.
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=68"
+                alt="Wade Warren"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Wade Warren</p>
+                <p class="text-gray-400 text-xs">@wadewarren</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 5 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              Rehan was a pleasure to work with. He turned our outdated website
+              into a fresh, intuitive platform that's both modern and easy to
+              navigate. Fantastic work overall.
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=59"
+                alt="Marvin McKinney"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Marvin McKinney</p>
+                <p class="text-gray-400 text-xs">@marvinmckinney</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 6 -->
+          <div
+            class="bg-[#111111] rounded-2xl p-8 shadow-lg shadow-black/40 hover:scale-[1.02] transition-transform duration-300"
+          >
+            <!-- Star Rating -->
+            <div class="flex gap-1 text-yellow-400 text-xl mb-4">
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+
+            <!-- Testimonial Text -->
+            <p class="text-gray-300 leading-relaxed mb-6">
+              Rehan was a pleasure to work with. He understood our requirements
+              perfectly and delivered a website that exceeded our expectations.
+              His skills in both frontend and backend dev are top-notch.
+            </p>
+
+            <!-- Profile Section -->
+            <div class="flex items-center gap-3">
+              <img
+                src="https://i.pravatar.cc/150?img=14"
+                alt="Albert Flores"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <p class="text-white font-semibold text-sm">Albert Flores</p>
+                <p class="text-gray-400 text-xs">@albertflores</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GET IN TOUCH SECTION -->
+    <section id="contact" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Badge and Heading -->
+        <div class="text-center mb-16">
+          <!-- Badge -->
+          <div class="inline-block mb-6">
+            <div
+              class="bg-gradient-to-r from-purple-500/10 to-indigo-500/10 border border-purple-500/30 rounded-full px-6 py-3 backdrop-blur-sm"
+            >
+              <p class="text-sm md:text-base font-medium text-purple-300">
+                💬 Have questions or ideas? Let's talk! 🚀
+              </p>
+            </div>
+          </div>
+
+          <!-- Main Heading -->
+          <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+            <span
+              class="glow-text bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent"
+            >
+              Get in Touch
+            </span>
+          </h2>
+          <p class="text-xl md:text-2xl text-gray-400 font-light">
+            Let's Connect and Create Something Amazing
+          </p>
+        </div>
+
+        <!-- Main Content: Form + 3D Model Placeholder -->
+        <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+          <!-- LEFT SIDE: Contact Form -->
+          <div class="flex-1">
+            <div
+              class="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-xl rounded-3xl p-8 md:p-10 border border-purple-500/20 shadow-2xl shadow-purple-500/10 hover:shadow-purple-500/20 transition-all duration-500"
+            >
+              <form id="contact-form" class="space-y-6">
+                <!-- Name Input -->
+                <div>
+                  <label
+                    class="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide"
+                  >
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="user_name"
+                    placeholder="What's your good name?"
+                    required
+                    class="w-full bg-gray-900/60 border border-gray-700/50 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none input-glow transition-all duration-300 hover:border-purple-500/50"
+                  />
+                </div>
+
+                <!-- Email Input -->
+                <div>
+                  <label
+                    class="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide"
+                  >
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    name="user_email"
+                    placeholder="What's your email address?"
+                    required
+                    class="w-full bg-gray-900/60 border border-gray-700/50 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none input-glow transition-all duration-300 hover:border-purple-500/50"
+                  />
+                </div>
+
+                <!-- Message Textarea -->
+                <div>
+                  <label
+                    class="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide"
+                  >
+                    Your Message
+                  </label>
+                  <textarea
+                    rows="6"
+                    name="message"
+                    placeholder="How can I help you?"
+                    required
+                    class="w-full bg-gray-900/60 border border-gray-700/50 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none input-glow transition-all duration-300 resize-none hover:border-purple-500/50"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-lg py-4 px-8 rounded-xl shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transform hover:scale-[1.02] transition-all duration-300"
+                >
+                  <span class="flex items-center justify-center gap-3">
+                    Send Message
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </form>
+
+              <!-- Additional Contact Info -->
+              <div class="mt-8 pt-8 border-t border-gray-700/50">
+                <p class="text-gray-400 text-sm text-center mb-4">
+                  Or reach out directly:
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                  <a
+                    href="mailto:rehanislamcontact@gmail.com"
+                    class="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      ></path>
+                    </svg>
+                    <span class="text-sm font-medium"
+                      >rehanislamcontact@gmail.com</span
+                    >
+                  </a>
+                  <a
+                    href="tel:+917001470593"
+                    class="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors"
+                  >
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                      ></path>
+                    </svg>
+                    <span class="text-sm font-medium">+91 70014 70593</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: 3D Model Placeholder -->
+          <div class="flex-1">
+            <div
+              class="h-full min-h-[500px] lg:min-h-[600px] bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-xl rounded-3xl border border-indigo-500/20 shadow-2xl shadow-indigo-500/10 flex items-center justify-center relative overflow-hidden group"
+            >
+              <!-- Animated Background Gradient -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-indigo-500/5 opacity-50 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+
+              <!-- Grid Pattern Overlay -->
+              <div
+                class="absolute inset-0 opacity-10"
+                style="
+                  background-image: linear-gradient(
+                      rgba(139, 92, 246, 0.3) 1px,
+                      transparent 1px
+                    ),
+                    linear-gradient(
+                      90deg,
+                      rgba(139, 92, 246, 0.3) 1px,
+                      transparent 1px
+                    );
+                  background-size: 50px 50px;
+                "
+              ></div>
+
+              <!-- Content -->
+              <div class="relative z-10 text-center float-animation">
+                <!-- Icon -->
+                <div class="mb-6">
+                  <div
+                    class="w-32 h-32 mx-auto bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-3xl flex items-center justify-center border border-purple-500/30 shadow-lg shadow-purple-500/20"
+                  >
+                    <svg
+                      class="w-16 h-16 text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- 3D Model Section -->
+                <div class="flex flex-col items-center text-center">
+                  <model-viewer
+                    src="./gaming+laptop+3d+model.glb"
+                    alt="3D Model"
+                    auto-rotate
+                    camera-controls
+                    shadow-intensity="1"
+                    exposure="1"
+                    style="width: 300px; height: 300px"
+                    class="rounded-2xl shadow-lg border border-gray-700"
+                  ></model-viewer>
+
+                  <h3 class="text-2xl md:text-3xl font-bold text-white mt-4">
+                    Interactive 3D Model
+                  </h3>
+                  <p class="text-gray-400 max-w-xs mx-auto">
+                    Explore the model of my workspace by rotating and zooming.
+                  </p>
+
+                  <!-- Decorative Elements -->
+                  <div class="mt-8 flex justify-center gap-3">
+                    <div
+                      class="w-2 h-2 bg-purple-500 rounded-full animate-pulse"
+                    ></div>
+                    <div
+                      class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"
+                      style="animation-delay: 0.2s"
+                    ></div>
+                    <div
+                      class="w-2 h-2 bg-pink-500 rounded-full animate-pulse"
+                      style="animation-delay: 0.4s"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section :  -->
+  </body>
+  <script src="Scripts/script.js"></script>
+</html>
